@@ -9,6 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    concurrency:
+      group: deploy
+      cancel-in-progress: true
+    
     steps:
       - name: Chekout Repository
         uses: actions/checkout@v6.0.2
